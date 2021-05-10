@@ -34,8 +34,9 @@ phases:
   # - command
   # - command
   build:
-    commands:
-      - mvn clean build
+    commands:commands:
+      - echo Build started on `date`
+      - gradle build
     # - command
     # - command
     #post_build:
@@ -50,9 +51,9 @@ phases:
     #base-directory: location
     #discard-paths: yes
     #file-format: JunitXml | CucumberJson
-    #artifacts:
-    #files:
-    # - location
+    artifacts:
+    files:
+     - location build/libs/microserviceGradleJAR.jar
     # - location
     #name: $(date +%Y-%m-%d)
     #discard-paths: yes
